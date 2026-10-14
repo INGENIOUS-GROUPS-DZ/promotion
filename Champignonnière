@@ -1,0 +1,1390 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b43">
+  <meta name="description" content="Royal Champignon Algeria : culture et production de champignons alimentaires à Sidi Hamad, Meftah, Blida, Algérie.">
+  <meta property="og:title" content="Royal Champignon Algeria">
+  <meta property="og:description" content="La fraîcheur naturelle, la qualité et l'avenir de la culture des champignons en Algérie.">
+  <meta property="og:type" content="website">
+  <title>Royal Champignon Algeria | Culture de champignons</title>
+
+  <style>
+    :root {
+      --green: #176b43;
+      --green-dark: #0b3827;
+      --green-light: #eaf6ee;
+      --mint: #f5faf6;
+      --gold: #c8a85b;
+      --text: #20372b;
+      --muted: #6d7c72;
+      --white: #ffffff;
+      --shadow: 0 16px 45px rgba(16, 75, 45, .09);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    section { padding: 90px 6%; }
+    .container { width: min(1180px, 100%); margin: auto; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: .86rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.3;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    .section-head p { color: var(--muted); }
+    .green-text { color: var(--green); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      box-shadow: 0 8px 24px rgba(23, 107, 67, .2);
+    }
+
+    .btn-primary:hover { background: var(--green-dark); }
+
+    .btn-outline {
+      border-color: rgba(23, 107, 67, .25);
+      color: var(--green);
+      background: white;
+    }
+
+    .btn-outline:hover { background: var(--green-light); }
+
+    /* Navigation */
+    .navbar {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #edf2ee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand { display: flex; align-items: center; gap: 11px; }
+
+    .brand-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 25px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      color: var(--green-dark);
+      font-weight: 900;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .brand-name small {
+      display: block;
+      font-size: .7rem;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a { font-size: .9rem; font-weight: 700; }
+    .nav-links a:hover { color: var(--green); }
+    .menu-toggle { display: none; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 75px 6%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(200,168,91,.14), transparent 25%),
+        radial-gradient(circle at 90% 85%, rgba(23,107,67,.1), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #f5faf6 55%, #eaf6ee 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(23,107,67,.09);
+      border-radius: 50%;
+      left: -150px;
+      top: -180px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      line-height: 1.18;
+      letter-spacing: -1.5px;
+      color: var(--green-dark);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span { color: var(--green); }
+
+    .hero-description {
+      font-size: 1.08rem;
+      max-width: 570px;
+      color: #627268;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .85rem;
+      margin-top: 25px;
+    }
+
+    .hero-note span { color: var(--green); font-size: 1.2rem; }
+
+    .hero-art {
+      position: relative;
+      min-height: 450px;
+      display: grid;
+      place-items: center;
+    }
+
+    .art-circle {
+      width: min(410px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #d8eddd, #f7fbf7);
+      border: 1px solid rgba(23,107,67,.12);
+      display: grid;
+      place-items: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .art-circle::before, .art-circle::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(23,107,67,.12);
+    }
+
+    .art-circle::before { inset: 20px; }
+    .art-circle::after { inset: -20px; border-style: dashed; }
+
+    .mushroom-illustration {
+      width: 90%;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 20px 15px rgba(26,65,42,.12));
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: white;
+      border: 1px solid #e7efe8;
+      border-radius: 16px;
+      padding: 13px 17px;
+      box-shadow: var(--shadow);
+      font-weight: 800;
+      z-index: 2;
+    }
+
+    .floating-tag small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: .76rem;
+    }
+
+    .tag-one { top: 55px; right: -5px; }
+    .tag-two { bottom: 45px; left: -5px; }
+
+    /* Highlights */
+    .highlights { padding: 0 6% 55px; }
+
+    .highlight-grid {
+      width: min(1050px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #e9f0ea;
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight { padding: 25px 18px; text-align: center; }
+    .highlight + .highlight { border-left: 1px solid #e9f0ea; }
+    .highlight .symbol { font-size: 1.8rem; margin-bottom: 5px; }
+    .highlight h3 { font-size: 1rem; color: var(--green-dark); }
+    .highlight p { color: var(--muted); font-size: .84rem; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-panel {
+      padding: 35px;
+      background: var(--mint);
+      border: 1px solid #e5efe7;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-panel::after {
+      content: "ROYAL";
+      position: absolute;
+      bottom: -30px;
+      left: -10px;
+      color: rgba(23,107,67,.055);
+      font-size: 6rem;
+      font-weight: 900;
+    }
+
+    .about-emblem {
+      width: 82px;
+      height: 82px;
+      background: white;
+      border: 1px solid #e5efe7;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      margin-bottom: 24px;
+    }
+
+    .about-panel h3 {
+      color: var(--green-dark);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .about-copy h2 {
+      color: var(--green-dark);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+
+    .about-copy p { color: var(--muted); margin-bottom: 15px; }
+    .check-list { list-style: none; margin: 20px 0; }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .check-list li span {
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      color: var(--green);
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Products */
+    .products-section { background: var(--mint); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e8f0e9;
+      border-radius: 22px;
+      padding: 24px;
+      transition: .25s ease;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #c9e2d0;
+    }
+
+    .product-visual {
+      height: 190px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #eaf6ee, #f9fcf9);
+      margin-bottom: 20px;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-visual::before {
+      content: "";
+      width: 130px;
+      height: 130px;
+      background: rgba(23,107,67,.07);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .product-visual span { position: relative; z-index: 1; }
+    .product-card h3 { color: var(--green-dark); font-size: 1.3rem; margin-bottom: 8px; }
+    .product-card p { color: var(--muted); font-size: .94rem; }
+
+    .product-tag {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    /* Nutrition */
+    .nutrition-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+
+    .nutrition-card {
+      padding: 25px 18px;
+      border: 1px solid #e7eee8;
+      border-radius: 18px;
+      text-align: center;
+      background: white;
+      transition: .25s;
+    }
+
+    .nutrition-card:hover {
+      border-color: var(--green);
+      background: var(--mint);
+    }
+
+    .nutrition-icon { font-size: 2rem; margin-bottom: 12px; }
+    .nutrition-card h3 { color: var(--green); margin-bottom: 8px; }
+    .nutrition-card p { font-size: .87rem; color: var(--muted); }
+
+    .nutrition-note {
+      background: #fffaf0;
+      border-left: 4px solid var(--gold);
+      padding: 17px 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+      color: #69572e;
+      font-size: .9rem;
+    }
+
+    /* Cultivation */
+    .process-section { background: var(--green-dark); color: white; }
+    .process-section .section-head h2 { color: white; }
+    .process-section .section-head p { color: #c3d8ca; }
+    .process-section .eyebrow { background: rgba(255,255,255,.1); color: #d8f0df; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.055);
+      border-radius: 18px;
+      padding: 24px 20px;
+    }
+
+    .process-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--gold);
+      color: var(--green-dark);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 { margin-bottom: 9px; font-size: 1.1rem; }
+    .process-card p { color: #c5d9cc; font-size: .88rem; }
+
+    /* Quality */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .quality-card {
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid #e8f0e9;
+      background: white;
+    }
+
+    .quality-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      border-radius: 17px;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .quality-card h3 { color: var(--green-dark); margin-bottom: 8px; }
+    .quality-card p { color: var(--muted); font-size: .92rem; }
+
+    /* Call to action */
+    .contact-banner { padding: 0 6% 90px; }
+
+    .banner-inner {
+      width: min(1180px, 100%);
+      margin: auto;
+      padding: 50px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(200,168,91,.19), transparent 28%),
+        linear-gradient(120deg, #176b43, #0b3827);
+      color: white;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .banner-inner h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .banner-inner p { color: #d4e6d9; max-width: 650px; }
+
+    .banner-inner .btn {
+      background: var(--gold);
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      color: var(--green-dark);
+      font-size: 1.65rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-info > p { color: var(--muted); margin-bottom: 24px; }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 17px 0;
+      border-bottom: 1px solid #e9f0ea;
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 13px;
+      background: var(--green-light);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item small { color: var(--muted); display: block; }
+    .contact-item strong { color: var(--green-dark); }
+
+    .contact-form {
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid #e5eee7;
+      box-shadow: var(--shadow);
+      background: white;
+    }
+
+    .contact-form h3 { color: var(--green-dark); font-size: 1.45rem; margin-bottom: 5px; }
+    .form-intro { color: var(--muted); font-size: .9rem; margin-bottom: 22px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field { margin-bottom: 17px; }
+
+    .field label {
+      display: block;
+      font-weight: 800;
+      font-size: .88rem;
+      margin-bottom: 7px;
+    }
+
+    .field input, .field textarea, .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #dfe9e1;
+      border-radius: 11px;
+      outline: none;
+      background: #fcfefc;
+      color: var(--text);
+      transition: .2s;
+    }
+
+    .field input:focus, .field textarea:focus, .field select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(23,107,67,.08);
+    }
+
+    .field textarea { resize: vertical; min-height: 115px; }
+    .contact-form .btn { width: 100%; }
+    .form-message { color: var(--muted); font-size: .8rem; margin-top: 12px; }
+
+    /* FAQ */
+    .faq-section { background: var(--mint); }
+    .faq-list { max-width: 850px; margin: auto; }
+
+    .faq-list details {
+      background: white;
+      border: 1px solid #e5eee7;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      padding: 18px 22px;
+    }
+
+    .faq-list summary {
+      font-weight: 800;
+      color: var(--green-dark);
+      cursor: pointer;
+    }
+
+    .faq-list details p { color: var(--muted); margin-top: 12px; }
+
+    /* Footer */
+    footer {
+      background: #082a1d;
+      color: white;
+      padding: 45px 6% 20px;
+    }
+
+    .footer-grid {
+      width: min(1180px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand { color: white; font-size: 1.2rem; font-weight: 900; }
+    .footer-description { color: #b8cfc0; margin-top: 12px; max-width: 390px; font-size: .9rem; }
+    footer h4 { margin-bottom: 14px; color: #e4d19c; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 9px; color: #c7d9cd; font-size: .9rem; }
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+      width: min(1180px, 100%);
+      margin: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      color: #a9c0b1;
+      font-size: .82rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      z-index: 900;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #20c765;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.9rem;
+      box-shadow: 0 7px 25px rgba(0,0,0,.2);
+      transition: .2s;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 950px) {
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: .82rem; }
+      .hero-grid { gap: 25px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .nutrition-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 30px; }
+    }
+
+    @media (max-width: 760px) {
+      section { padding: 65px 5%; }
+      .navbar { padding: 0 5%; height: 72px; }
+      .brand-name { font-size: .85rem; }
+      .brand-name small { font-size: .62rem; }
+      .brand-icon { width: 39px; height: 39px; }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+        width: 43px;
+        height: 43px;
+        border: 1px solid #e2ece4;
+        border-radius: 11px;
+        background: white;
+        color: var(--green);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 71px;
+        right: 0;
+        left: 0;
+        padding: 18px 5% 25px;
+        background: white;
+        border-bottom: 1px solid #e5eee7;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li a { display: block; padding: 10px 0; font-size: .95rem; }
+
+      .hero { padding: 55px 5% 70px; min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 15px; }
+      .hero-copy { text-align: center; }
+      .hero-description { margin-right: auto; margin-left: auto; }
+      .hero-actions, .hero-note { justify-content: center; }
+      .hero-art { min-height: 340px; margin-top: 15px; }
+      .art-circle { width: min(300px, 80vw); }
+      .tag-one { right: 0; top: 20px; }
+      .tag-two { left: 0; bottom: 20px; }
+      .floating-tag { padding: 10px 12px; font-size: .83rem; }
+
+      .highlights { padding: 0 5% 35px; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .highlight { padding: 18px; }
+      .highlight + .highlight { border-left: 0; border-top: 1px solid #e9f0ea; }
+
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-panel { padding: 28px; }
+      .product-grid, .quality-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .process-card { padding: 19px 15px; }
+      .banner-inner { padding: 30px 24px; flex-direction: column; align-items: flex-start; }
+      .contact-banner { padding: 0 5% 65px; }
+      .contact-form { padding: 23px 18px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 25px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (max-width: 380px) {
+      .process-grid, .nutrition-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.35rem; }
+      .hero-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="#accueil" class="brand" aria-label="Royal Champignon Algeria - Accueil">
+    <span class="brand-icon">🍄</span>
+    <span class="brand-name">
+      Royal Champignon Algeria
+      <small>FRESHNESS • QUALITY • NATURE</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+  <nav aria-label="Navigation principale">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#produits">Nos produits</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Accueil -->
+  <section class="hero" id="accueil">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Agriculture alimentaire • Qualité naturelle</span>
+        <h1>
+          De la nature à votre table,<br>
+          <span>le goût de l'excellence.</span>
+        </h1>
+        <p class="hero-description">
+          Bienvenue chez Royal Champignon Algeria, un projet algérien dédié au développement de la culture des champignons alimentaires. Notre ambition : proposer des produits de qualité en accordant une attention particulière à l'hygiène, aux conditions de culture et aux pratiques de production responsables.
+        </p>
+        <div class="hero-actions">
+          <a href="#produits" class="btn btn-primary">Découvrir nos produits <span>→</span></a>
+          <a href="#contact" class="btn btn-outline">Nous contacter</a>
+        </div>
+        <div class="hero-note">
+          <span>✦</span>
+          <p>Notre projet est situé à Sidi Hamad, Meftah, wilaya de Blida, Algérie.</p>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Illustration de champignons">
+        <div class="art-circle">
+          <svg class="mushroom-illustration" viewBox="0 0 420 400" role="img" aria-label="Illustration de champignons et de feuilles vertes">
+            <defs>
+              <linearGradient id="cap" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#faf5e9"/>
+                <stop offset="55%" stop-color="#e9d9b9"/>
+                <stop offset="100%" stop-color="#c7a979"/>
+              </linearGradient>
+              <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#e7d9c2"/>
+                <stop offset="50%" stop-color="#fffdf7"/>
+                <stop offset="100%" stop-color="#d4c2a4"/>
+              </linearGradient>
+              <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4c9d65"/>
+                <stop offset="100%" stop-color="#176b43"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="210" cy="355" rx="150" ry="18" fill="#176b43" opacity=".1"/>
+            <path d="M65 305 C15 265 26 218 70 205 C73 250 88 275 112 294Z" fill="url(#leaf)"/>
+            <path d="M350 308 C400 264 387 223 346 209 C342 250 328 279 306 297Z" fill="url(#leaf)"/>
+            <path d="M73 210 Q83 250 112 294 M346 214 Q338 259 306 297" fill="none" stroke="#b6d9b8" stroke-width="3"/>
+            <path d="M150 326 C144 286 157 239 181 223 C204 208 234 213 249 235 C266 260 270 295 267 326Z" fill="url(#stem)"/>
+            <path d="M110 226 C116 162 170 124 224 132 C278 136 311 174 312 225 C268 247 154 248 110 226Z" fill="url(#cap)"/>
+            <path d="M123 224 C158 236 266 238 300 223" fill="none" stroke="#b18d5c" stroke-width="5" opacity=".65"/>
+            <path d="M160 186 Q211 157 267 187" fill="none" stroke="#fffdf5" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+            <path d="M179 278 C190 292 194 309 193 326" fill="none" stroke="#c6b494" stroke-width="4" opacity=".5"/>
+            <path d="M230 277 C239 294 241 308 240 326" fill="none" stroke="#c6b494" stroke-width="4" opacity=".4"/>
+            <path d="M50 335 C91 322 119 328 144 348 C108 361 78 356 50 335Z" fill="#4c9d65"/>
+            <path d="M370 337 C333 321 304 330 279 348 C311 361 343 356 370 337Z" fill="#4c9d65"/>
+            <path d="M91 338 L129 345 M329 338 L290 345" stroke="#c4e0c7" stroke-width="2"/>
+            <circle cx="300" cy="100" r="5" fill="#c8a85b"/>
+            <circle cx="325" cy="125" r="3" fill="#c8a85b"/>
+            <circle cx="92" cy="130" r="4" fill="#c8a85b"/>
+          </svg>
+        </div>
+        <div class="floating-tag tag-one">🌱 Culture responsable<small>Vers une meilleure production</small></div>
+        <div class="floating-tag tag-two">🍄 Champignons alimentaires<small>Des usages variés</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Points forts -->
+  <div class="highlights">
+    <div class="highlight-grid">
+      <div class="highlight">
+        <div class="symbol">🌿</div>
+        <h3>Respect de la nature</h3>
+        <p>Une approche agricole responsable</p>
+      </div>
+      <div class="highlight">
+        <div class="symbol">🧼</div>
+        <h3>Hygiène et vigilance</h3>
+        <p>Attention aux conditions de production</p>
+      </div>
+      <div class="highlight">
+        <div class="symbol">🇩🇿</div>
+        <h3>Projet algérien</h3>
+        <p>Basé à Sidi Hamad, Blida</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <div class="container about-grid">
+      <div class="about-panel reveal">
+        <div class="about-emblem">🍄</div>
+        <h3>Royal Champignon Algeria</h3>
+        <p>Contribuer au développement de la culture des champignons alimentaires en Algérie, avec une approche structurée et une attention à la qualité.</p>
+        <div style="height:2px;width:65px;background:#c8a85b;margin:23px 0"></div>
+        <p style="font-size:.92rem">Sidi Hamad · Meftah · Blida · Algérie</p>
+      </div>
+
+      <div class="about-copy reveal">
+        <span class="eyebrow">Qui sommes-nous ?</span>
+        <h2>La <span class="green-text">culture moderne</span> commence par la qualité.</h2>
+        <p>
+          Royal Champignon Algeria est un projet agricole qui ambitionne de participer au développement de la production de champignons alimentaires en Algérie. Notre démarche accorde une place importante au milieu de culture, au choix des substrats et au suivi des différentes étapes de production.
+        </p>
+        <p>
+          Nous souhaitons établir des relations de confiance avec les consommateurs, les restaurants, les commerces et les distributeurs, tout en développant des solutions adaptées aux besoins du marché.
+        </p>
+        <ul class="check-list">
+          <li><span>✓</span> Une attention particulière à la qualité et à la fraîcheur.</li>
+          <li><span>✓</span> Le respect des pratiques d'hygiène et de sécurité alimentaire.</li>
+          <li><span>✓</span> Le développement de partenariats de distribution.</li>
+          <li><span>✓</span> La valorisation de la production locale et de l'innovation agricole.</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Contacter notre équipe →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produits -->
+  <section class="products-section" id="produits">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Nos produits</span>
+        <h2>L'univers des <span class="green-text">champignons alimentaires</span></h2>
+        <p>Découvrez quelques-unes des variétés les plus connues dans la culture et la cuisine.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card reveal">
+          <div class="product-visual"><span>🍄</span></div>
+          <h3>Champignon pleurote</h3>
+          <p>Reconnu pour sa forme caractéristique et sa texture, le pleurote peut être cultivé sur des substrats organiques adaptés, préparés selon les exigences de production.</p>
+          <span class="product-tag">Oyster Mushroom</span>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-visual"><span>🍄‍🟫</span></div>
+          <h3>Champignon brun</h3>
+          <p>Apprécié pour sa saveur prononcée, il peut être utilisé dans les sauces, les plats chauds et de nombreuses recettes.</p>
+          <span class="product-tag">Brown Mushroom</span>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-visual"><span>🤍</span></div>
+          <h3>Champignon blanc</h3>
+          <p>Très présent en cuisine, il convient aux salades, pizzas, soupes et préparations cuisinées. Sa culture nécessite des conditions adaptées.</p>
+          <span class="product-tag">White Button Mushroom</span>
+        </article>
+      </div>
+
+      <p style="text-align:center;color:#6d7c72;font-size:.84rem;margin-top:25px">
+        Les variétés présentées sont données à titre informatif et ne constituent pas une confirmation de disponibilité commerciale.
+      </p>
+    </div>
+  </section>
+
+  <!-- Nutrition -->
+  <section id="nutrition">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Valeur nutritionnelle</span>
+        <h2>Le champignon : un <span class="green-text">atout dans l'assiette</span></h2>
+        <p>La composition nutritionnelle varie selon l'espèce, les conditions de culture, la conservation et la préparation.</p>
+      </div>
+
+      <div class="nutrition-grid">
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">💪</div>
+          <h3>Protéines</h3>
+          <p>Les champignons contiennent des protéines en quantités variables selon la variété et le produit considéré.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">⚡</div>
+          <h3>Vitamines B</h3>
+          <p>Certaines variétés apportent des vitamines du groupe B qui participent au fonctionnement normal de l'organisme.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">☀️</div>
+          <h3>Vitamine D</h3>
+          <p>Les champignons peuvent contenir de la vitamine D. Sa quantité dépend notamment de l'exposition aux UV.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">🌾</div>
+          <h3>Fibres</h3>
+          <p>Ils apportent des fibres alimentaires et d'autres composés naturels dans le cadre d'une alimentation variée.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">🧂</div>
+          <h3>Minéraux</h3>
+          <p>Selon la variété, ils peuvent apporter du potassium, du phosphore et du sélénium.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">🥗</div>
+          <h3>Usages culinaires</h3>
+          <p>Ils s'intègrent aux soupes, salades, sauces, plats végétariens et nombreuses autres recettes.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">🍽️</div>
+          <h3>Polyvalence</h3>
+          <p>Leur texture et leur saveur permettent une grande diversité de préparations culinaires.</p>
+        </article>
+        <article class="nutrition-card reveal">
+          <div class="nutrition-icon">🌱</div>
+          <h3>Alimentation variée</h3>
+          <p>Ils peuvent accompagner les légumes et d'autres sources de protéines dans des repas équilibrés.</p>
+        </article>
+      </div>
+
+      <div class="nutrition-note">
+        <strong>Information importante :</strong>
+        il n'est pas exact d'affirmer que tous les champignons contiennent « 40 types de protéines » sans analyse scientifique précise. Les protéines sont constituées d'acides aminés. Des valeurs nutritionnelles exactes nécessitent une analyse du produit concerné.
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section class="process-section" id="culture">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Du substrat à la récolte</span>
+        <h2>Comment cultive-t-on les champignons alimentaires ?</h2>
+        <p>Les détails varient selon la variété, mais une production structurée suit généralement plusieurs étapes nécessitant un contrôle attentif.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <div class="process-number">01</div>
+          <h3>Préparation du substrat</h3>
+          <p>Sélectionner le milieu de culture adapté, puis le préparer et le traiter selon les besoins de la variété choisie.</p>
+        </article>
+        <article class="process-card reveal">
+          <div class="process-number">02</div>
+          <h3>Ensemencement</h3>
+          <p>Introduire le mycélium dans des conditions d'hygiène adaptées afin de limiter les risques de contamination.</p>
+        </article>
+        <article class="process-card reveal">
+          <div class="process-number">03</div>
+          <h3>Croissance et suivi</h3>
+          <p>Surveiller la température, l'humidité, la ventilation et l'éclairage selon l'espèce et son stade de développement.</p>
+        </article>
+        <article class="process-card reveal">
+          <div class="process-number">04</div>
+          <h3>Récolte et conditionnement</h3>
+          <p>Récolter au bon moment, trier, conditionner et conserver les produits selon les exigences de sécurité alimentaire.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualité -->
+  <section id="qualite">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Nos engagements</span>
+        <h2>La qualité n'est pas un détail, <span class="green-text">c'est une priorité.</span></h2>
+        <p>Des principes essentiels pour construire un projet agricole fiable et évolutif.</p>
+      </div>
+
+      <div class="quality-grid">
+        <article class="quality-card reveal">
+          <div class="quality-icon">🧼</div>
+          <h3>Hygiène et prévention</h3>
+          <p>Maintenir la propreté des espaces et du matériel, et surveiller les sources potentielles de contamination à chaque étape.</p>
+        </article>
+        <article class="quality-card reveal">
+          <div class="quality-icon">🌡️</div>
+          <h3>Contrôle de l'environnement</h3>
+          <p>Suivre les conditions de température, d'humidité et de ventilation adaptées à la variété cultivée.</p>
+        </article>
+        <article class="quality-card reveal">
+          <div class="quality-icon">📦</div>
+          <h3>Conditionnement et conservation</h3>
+          <p>Choisir des emballages appropriés et respecter les conditions de conservation et de transport nécessaires.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appel à l'action -->
+  <div class="contact-banner">
+    <div class="banner-inner">
+      <div>
+        <h2>Vous recherchez un partenaire dans le secteur des champignons ?</h2>
+        <p>Pour toute demande d'information, de partenariat commercial ou d'approvisionnement, contactez directement Royal Champignon Algeria sur WhatsApp.</p>
+      </div>
+      <a class="btn"
+         href="https://wa.me/213770660606?text=Bonjour%2C%20je%20souhaite%20contacter%20Royal%20Champignon%20Algeria."
+         target="_blank" rel="noopener noreferrer">
+        Nous contacter sur WhatsApp ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Contact</span>
+        <h2>Parlons de <span class="green-text">votre projet</span></h2>
+        <p>Pour toute demande concernant les produits, la distribution ou une éventuelle collaboration, envoyez-nous votre message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Royal Champignon Algeria</h3>
+          <p>Nous accueillons les demandes des particuliers, restaurants, commerces et distributeurs intéressés par les champignons alimentaires.</p>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <small>Adresse</small>
+              <strong>Sidi Hamad, Meftah, Blida, Algérie</strong>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <small>Téléphone et WhatsApp</small>
+              <strong dir="ltr">0770 66 06 06</strong>
+              <div style="margin-top:8px">
+                <a class="green-text" href="https://wa.me/213770660606" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🤝</div>
+            <div>
+              <small>Partenariats</small>
+              <strong>Restaurants, commerces et distributeurs</strong>
+              <p style="color:#6d7c72;font-size:.88rem">Contactez-nous pour discuter de vos besoins et des possibilités de collaboration.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Envoyez votre demande</h3>
+          <p class="form-intro">Remplissez les informations ci-dessous pour préparer un message à envoyer sur WhatsApp.</p>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="customerName">Nom complet</label>
+              <input id="customerName" name="name" type="text" placeholder="Votre nom" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="customerPhone">Numéro de téléphone</label>
+              <input id="customerPhone" name="phone" type="tel" placeholder="Votre numéro" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="requestType">Objet de la demande</label>
+            <select id="requestType" name="request" required>
+              <option value="">Choisir une option</option>
+              <option>Informations sur les produits</option>
+              <option>Demande d'approvisionnement</option>
+              <option>Distribution et partenariat commercial</option>
+              <option>Informations sur la culture des champignons</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="customerMessage">Votre message</label>
+            <textarea id="customerMessage" name="message" placeholder="Décrivez votre demande..." required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Envoyer via WhatsApp ↗</button>
+          <p class="form-message">Vos informations ne sont pas enregistrées sur un serveur par ce formulaire. WhatsApp s'ouvrira avec un message que vous pourrez vérifier avant de l'envoyer.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>Ce que vous devez savoir</h2>
+        <p>Quelques réponses sur les champignons alimentaires, leur culture et les possibilités de collaboration.</p>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>Quelles variétés de champignons alimentaires peut-on cultiver ?</summary>
+          <p>Parmi les variétés connues figurent le pleurote, le champignon de Paris blanc et le champignon brun. Le choix dépend des conditions de production, du marché et des moyens techniques disponibles.</p>
+        </details>
+        <details>
+          <summary>Les champignons ont-ils besoin de lumière directe du soleil ?</summary>
+          <p>La plupart des champignons cultivés commercialement n'ont pas besoin de lumière solaire directe. Les besoins en éclairage, température, humidité et ventilation dépendent de l'espèce et du stade de croissance.</p>
+        </details>
+        <details>
+          <summary>Les champignons sont-ils une source de protéines ?</summary>
+          <p>Oui, ils contiennent des protéines, mais les quantités varient selon la variété et selon que les valeurs concernent un produit frais ou séché. Pour publier des chiffres précis, il faut se référer à une analyse nutritionnelle fiable.</p>
+        </details>
+        <details>
+          <summary>Comment demander un approvisionnement ou un partenariat ?</summary>
+          <p>Utilisez le formulaire de contact ou écrivez-nous sur WhatsApp. Indiquez le produit souhaité, la quantité estimée et votre localisation afin de faciliter l'étude de votre demande.</p>
+        </details>
+        <details>
+          <summary>Peut-on visiter le site de l'entreprise ?</summary>
+          <p>Le projet est situé à Sidi Hamad, Meftah, dans la wilaya de Blida. Contactez-nous à l'avance sur WhatsApp pour confirmer les possibilités de visite et convenir d'un rendez-vous.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Pied de page -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="#accueil" class="footer-brand">🍄 Royal Champignon Algeria</a>
+      <p class="footer-description">
+        Pour un avenir prometteur de la culture des champignons alimentaires en Algérie, avec une attention particulière à la qualité, à l'hygiène et au développement agricole.
+      </p>
+    </div>
+
+    <div>
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#produits">Nos produits</a></li>
+        <li><a href="#nutrition">Valeur nutritionnelle</a></li>
+        <li><a href="#culture">Étapes de culture</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Coordonnées</h4>
+      <ul class="footer-links">
+        <li>📍 Sidi Hamad, Meftah, Blida</li>
+        <li><a href="tel:+213770660606">📞 0770 66 06 06</a></li>
+        <li><a href="https://wa.me/213770660606" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
+        <li>🇩🇿 Algérie</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Royal Champignon Algeria. Tous droits réservés.</span>
+    <span>Cultivons l'excellence, naturellement.</span>
+  </div>
+</footer>
+
+<!-- Bouton WhatsApp flottant -->
+<a class="whatsapp-float"
+   href="https://wa.me/213770660606?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20Royal%20Champignon%20Algeria."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contacter Royal Champignon Algeria sur WhatsApp">☏</a>
+
+<script>
+  // Année automatique dans le pied de page
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Menu mobile
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Apparition progressive des éléments
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(element => observer.observe(element));
+  } else {
+    revealElements.forEach(element => element.classList.add("visible"));
+  }
+
+  // Formulaire de contact vers WhatsApp
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const request = document.getElementById("requestType").value;
+    const message = document.getElementById("customerMessage").value.trim();
+
+    if (!name || !phone || !request || !message) {
+      alert("Veuillez remplir tous les champs obligatoires.");
+      return;
+    }
+
+    const whatsappMessage =
+      "Bonjour, je vous contacte depuis le site de Royal Champignon Algeria.\n\n" +
+      "Nom : " + name + "\n" +
+      "Téléphone : " + phone + "\n" +
+      "Objet : " + request + "\n" +
+      "Message : " + message;
+
+    const whatsappURL =
+      "https://wa.me/213770660606?text=" + encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+  });
+</script>
+
+</body>
+</html>
+
